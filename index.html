@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Girlfriend Day Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px) scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-pink-100 flex items-center justify-center min-h-screen">
+    <div
+      class="max-w-md rounded-lg overflow-hidden shadow-2xl bg-white fade-in"
+    >
+      <div class="grid grid-cols-2 gap-2">
+        <img
+          class="w-full h-48 object-cover"
+          src="gf 1.jpg"
+          alt="Girlfriend Photo 1"
+        />
+        <img
+          class="w-full h-48 object-cover"
+          src="gf 2.jpg"
+          alt="Girlfriend Photo 2"
+        />
+        <img
+          class="w-full h-48 object-cover"
+          src="gf 3.jpg"
+          alt="Girlfriend Photo 3"
+        />
+        <img
+          class="w-full h-48 object-cover"
+          src="gf 4.jpg"
+          alt="Girlfriend Photo 4"
+        />
+      </div>
+      <div class="px-8 py-6">
+        <div class="font-bold text-3xl mb-4 text-pink-500 text-center">
+          Girlfriend Day!
+        </div>
+        <p class="text-gray-700 text-xl">
+          Hello beautiful, Thank you for accepting me and always being honest
+          with me. I love you more than words can say. Happy Girlfriend's Day!
+        </p>
+      </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" src="musik/musik.mp3" autoplay loop></audio>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const card = document.querySelector(".fade-in");
+        const audio = document.getElementById("bg-music");
+
+        card.style.animation = "fadeIn 1s ease-in-out";
+
+        // Play the audio (it might be muted by default due to browser policies)
+        audio.play().catch((error) => {
+          // Handle error, possibly the autoplay was blocked by the browser
+          console.log("Autoplay was prevented:", error);
+        });
+      });
+    </script>
+  </body>
+</html>
